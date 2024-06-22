@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pikanteee</title>
+  <link rel="icon" href="/img/android-icon-36x36.png"> <!-- Ruta al archivo favicon.ico -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bg-dark text-light py-4">
+    <div class="container">
+      <h4 class="text-left mb-0">Previando con Pikante🔥</h4> <!-- Ajustado h3 y añadido mb-0 para quitar el margen inferior -->
+    </div>
+    
+  </header>
+
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-auto">
+        <div class="row justify-content-center align-items-center" style="height: 70vh;">
+          <div class="col-auto">
+            <div id="rectangle" class="vertical-rectangle">
+              <p id="challenge" class="top-paragraph"><strong>REGLAS:</strong> cada vez que apreten girar <strong>se deberá mostrar la pantalla</strong> para que no hagan trampa, no se niegan shots sino<strong> sos el próximo en irte del grupo corte rocca</strong></p>
+              <div class="row justify-content-center mt-1">
+                <div class="col-auto">
+                  <button class="btn btn-danger" onclick="cambiarReto()">Girar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Script JavaScript para cambiar el reto y animar la grilla -->
+  <script>
+    function cambiarReto() {
+      var retos = [
+        "Te salvaste",
+        "Subir un Tweet por 10 minutos elegido por los jugadores o 2 SHOTS",
+        "Tenes que sentarte upa del jugador a tu derecha toda la partida",
+        "SHOT a las personas que tienen instalado TINDER",
+        "SHOT a las personas que tienen instalado SNAPCHAT, full nude eso",
+        "SHOT si estas usando algo negro",
+        "Transferile plata por Mercado Pago a la persona del frente o 2 SHOTS",
+        "Responderle la historia a una persona RANDOM o 2 SHOTS",
+        "Tengo un barquito lleno de..., el que pierda SHOT",
+        "Todos toman 1 SHOT",
+        "Toman los viejos del pami +20",
+        "GRAN HERMANO, todos deben votar a alguien en el celular, el más votado SHOT",
+        "Dejar que te suban una historia a IG (puede ser en la privada) o 2 SHOTS",
+        "Repartir dos SHOTS",
+        "Contar la persona mas rancia con la que te viste o 3 SHOTS",
+        "Dar referencias de alguna persona de Canals, el que lo adivina reparte un SHOT, menos al que le toco el reto",
+        "Todos los celulares al medio, el que le llegue un mensaje primero SHOT",
+        "SHOT a la persona que llegó última a la juntada",
+        "Toman un SHOT los casados",
+        "Toman un SHOT los solteros",
+        "Todos toman 1 SHOT",
+        "BATIDORA o mensaje random a tu vieja",
+        "Subir la última foto de tu galeria a la cuenta privada o 2 SHOTS",
+        "Pasar el hielo, en el caso que se nieguen shot para todos, si se realiza el juego toma shot a la persona que se le caiga",
+        "SHOTS a los nombres terminados en A",
+        "REVERSA, la ronda cambia de dirección",
+        "Deletrea rápidamente la palabra que diga el de tu derecha, si lo decís mal 1 SHOT",
+        "SHOT al último que haya fumado",
+        "Subir una foto de nosotros a tu Facebook o 3 SHOTS",
+        "SHOT a la persona que crean que hoy garcha",
+      ];
+      var randomIndex = Math.floor(Math.random() * retos.length);
+      var nuevoReto = retos[randomIndex];
+      
+      // Animación para girar la grilla
+      var rectangle = document.getElementById("rectangle");
+      rectangle.style.transition = "transform 1s ease-in-out";
+      rectangle.style.transform = "rotateY(180deg)";
+
+      // Cambiar el reto después de la animación
+      setTimeout(function() {
+        document.getElementById("challenge").innerHTML = nuevoReto;
+        rectangle.style.transform = "rotateY(0deg)"; // Volver a la posición inicial
+      }, 700); // Esperar 0.7 segundos (700 milisegundos) antes de cambiar el reto
+    }
+  </script>
+</body>
+</html>
